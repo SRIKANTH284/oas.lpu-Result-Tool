@@ -1,0 +1,27 @@
+{
+  "name": "OAS.LPU TOOL",
+  "version": "1.0",
+  "description": "OAS.LPU TOOL for result analysis",
+  "homepage_url": "https://github.com/SRIKANTH284/oas.lpu-Result-Tool",
+  "author": "BADAVATH SRIKANTH",
+  "manifest_version": 3,
+  "icons": {
+    "16": "./images/icon16.png"
+    
+  },
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "./popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://oas.lpu.in/*"],
+      "css": ["./popup/popup.css"],
+      "js": ["content.js", "JqueryVal.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
